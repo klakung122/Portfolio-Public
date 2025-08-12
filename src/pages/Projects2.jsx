@@ -4,17 +4,12 @@ import Sidebar from '../components/sidebar/Sidebar';
 import Footer from '../components/footer/Footer';
 import Controls from '../components/controls/Controls';
 import ProjectCard from '../components/projectcard/Projectcard';
-import { FaReact, FaDocker } from "react-icons/fa6";
-import { FaNode } from "react-icons/fa";
-import { SiMysql } from "react-icons/si";
+import { FaReact } from "react-icons/fa6";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
-function Projects() {
+function Projects2() {
     const skills = [
         { icon: <FaReact className="skill-icon react" /> },
-        { icon: <FaNode className="skill-icon node" /> },
-        { icon: <FaDocker className="skill-icon docker" /> },
-        { icon: <SiMysql className="skill-icon mysql" /> },
     ];
 
     return (
@@ -68,4 +63,4 @@ function Projects() {
     )
 }
 
-export default Projects
+export default Projects2

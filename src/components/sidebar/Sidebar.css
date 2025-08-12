@@ -24,10 +24,11 @@
         0 1px 1px rgba(0, 0, 0, 0.05),
         0 4px 8px rgba(0, 0, 0, 0.25),
         0 8px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(20px) saturate(150%);
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
     contain: layout paint;
     isolation: isolate;
+    z-index: 999999;
 }
 
 .icon-wrapper {
@@ -99,8 +100,6 @@
     height: 56px;
     border-radius: 32px;
     background: rgba(255, 255, 255, 0.10);
-    /* เอาพื้นหลังมาไว้ที่นี่ */
-    /* filter: blur(10px);  ลบ */
     opacity: 0;
     top: 0;
     transition: top 260ms cubic-bezier(.25, .85, .25, 1), opacity 150ms ease;
@@ -122,8 +121,7 @@
     height: 56px;
     border-radius: 32px;
     background: rgba(255, 255, 255, 0.10);
-    /* หรือ var(--White-white-10) */
-    filter: blur(20px);
+    filter: blur(12px);
     opacity: 0;
     transition:
         top 180ms cubic-bezier(.2, .8, .2, 1),

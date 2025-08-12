@@ -9,7 +9,7 @@ import { FaNode } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
-function Projects() {
+function Projects3() {
     const skills = [
         { icon: <FaReact className="skill-icon react" /> },
         { icon: <FaNode className="skill-icon node" /> },
@@ -68,4 +68,4 @@ function Projects() {
     )
 }
 
-export default Projects
+export default Projects3
