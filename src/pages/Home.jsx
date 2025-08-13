@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import '../styles/Home.css';
 import Sidebar from '../components/sidebar/Sidebar';
 import Footer from '../components/footer/Footer';
@@ -27,14 +28,20 @@ function Home() {
         { icon: <SiMysql className="skill-icon mysql" /> },
     ];
 
-    const wrapRef = useRef(null);   // .projects-card-con
-    const trackRef = useRef(null);  // .projects-track
+    const DRAG_THRESHOLD = 8; // ขยับเกินนี้ค่อยนับว่า drag
 
+    const navigate = useNavigate();
+
+    const wrapRef = useRef(null);
+    const trackRef = useRef(null);
+
+    const pointerDown = useRef(false);
     const dragging = useRef(false);
     const startX = useRef(0);
-    const startTX = useRef(0);      // translateX ตอนเริ่มลาก
-    const PADDING = 160;
+    const startY = useRef(0);
+    const startTX = useRef(0);
 
+    const PADDING = 160;
     const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 
     const onPointerDown = (e) => {
@@ -42,46 +49,68 @@ function Home() {
         const track = trackRef.current;
         if (!wrap || !track) return;
 
-        dragging.current = true;
-        wrap.setPointerCapture?.(e.pointerId);
-
-        // ตำแหน่งเริ่ม + ค่า translateX ปัจจุบัน
+        pointerDown.current = true;
+        dragging.current = false; // ยังไม่ถือว่า drag จนกว่าจะเกิน threshold
         startX.current = e.clientX;
+        startY.current = e.clientY;
+
         const matrix = new DOMMatrixReadOnly(
             getComputedStyle(track).transform === "none"
                 ? "matrix(1,0,0,1,0,0)"
                 : getComputedStyle(track).transform
         );
-        startTX.current = matrix.m41; // translateX ปัจจุบัน
+        startTX.current = matrix.m41;
     };
 
     const onPointerMove = (e) => {
-        if (!dragging.current) return;
+        if (!pointerDown.current) return;
+
+        const dx = e.clientX - startX.current;
+        const dy = e.clientY - startY.current;
+
+        // เพิ่งจะเริ่ม drag ก็ต่อเมื่อเกิน threshold
+        if (!dragging.current) {
+            if (Math.hypot(dx, dy) > DRAG_THRESHOLD) {
+                dragging.current = true;
+                // จับ pointer ตอนนี้เพื่อให้ลากลื่น
+                wrapRef.current?.setPointerCapture?.(e.pointerId);
+                trackRef.current?.classList.add("dragging");
+            } else {
+                return; // ยังไม่ลากจริง อย่าขยับ track
+            }
+        }
+
         const wrap = wrapRef.current;
         const track = trackRef.current;
         if (!wrap || !track) return;
 
-        const dx = e.clientX - startX.current;
+        const wrapW = wrap.clientWidth;
+        const contentW = track.scrollWidth;
 
-        const wrapW = wrap.clientWidth;      // รวม padding ซ้าย/ขวาแล้ว
-        const contentW = track.scrollWidth;  // ความกว้างจริงของรายการทั้งหมด
-
-        const maxTX = 0;                                     // ซ้ายสุด = 0
-        let minTX = wrapW - contentW - 2 * PADDING;          // ขวาสุดหัก padding ซ้าย+ขวา
-
-        // ถ้าเนื้อหาสั้นกว่าพื้นที่แสดงผล ก็ล็อกไว้ที่ 0 ไปเลย
-        if (contentW + 2 * PADDING <= wrapW) {
-            minTX = maxTX;
-        }
+        const maxTX = 0;
+        let minTX = wrapW - contentW - 2 * PADDING;
+        if (contentW + 2 * PADDING <= wrapW) minTX = maxTX;
 
         const nextTX = clamp(startTX.current + dx, minTX, maxTX);
         track.style.transform = `translateX(${nextTX}px)`;
     };
 
     const endDrag = (e) => {
-        if (!dragging.current) return;
-        dragging.current = false;
+        if (!pointerDown.current) return;
+
+        // ปลดสถานะ
+        pointerDown.current = false;
         wrapRef.current?.releasePointerCapture?.(e.pointerId);
+        trackRef.current?.classList.remove("dragging");
+
+        // ถ้าไม่ได้ drag จริง (ไม่เกิน threshold) ให้ถือว่าเป็น "tap" → นำทาง
+        if (!dragging.current) {
+            // หา card ใกล้สุดที่โดน tap
+            const cardEl = e.target.closest(".project-card");
+            const path = cardEl?.dataset?.path;
+            if (path) navigate(path);
+        }
+        dragging.current = false;
     };
 
     return (
@@ -142,9 +171,21 @@ function Home() {
                         onPointerCancel={endDrag}
                     >
                         <div className="projects-track" ref={trackRef}>
-                            <ProjectCard title="POS Project" imgUrl="/ProjectFrame1.png" />
-                            <ProjectCard title="BirthDay Project" imgUrl="/ProjectFrame.png" />
-                            <ProjectCard title="Rental Room Project" imgUrl="/ProjectFrame2.png" />
+                            <ProjectCard
+                                title="POS Project"
+                                imgUrl="/ProjectFrame1.png"
+                                path="/projects"
+                            />
+                            <ProjectCard
+                                title="BirthDay Project"
+                                imgUrl="/ProjectFrame.png"
+                                path="/projects2"
+                            />
+                            <ProjectCard
+                                title="Rental Room Project"
+                                imgUrl="/ProjectFrame2.png"
+                                path="/projects3"
+                            />
                         </div>
                     </div>
                 </div>

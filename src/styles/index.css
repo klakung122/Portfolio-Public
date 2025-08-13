@@ -38,6 +38,5 @@ ul {
 @media (prefers-color-scheme: light) {
   :root {
     color: #fff;
-    background-color: #15161A;
   }
 }

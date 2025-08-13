@@ -52,7 +52,10 @@ function Projects() {
                         <span>Explain what your project is about: what kind of problem does it solve, who is the target group, and how does it provide a sufficient solution?</span>
                     </div>
 
-                    <button type="button" className='controlbtn visit'><span>Visit Once UI</span><FaLongArrowAltRight /></button>
+                    <button type="button" className='controlbtn visit' onClick={() => window.open("", "_blank")}>
+                        <span>Visit This Project</span>
+                        <FaLongArrowAltRight />
+                    </button>
                 </div>
             </div>
 

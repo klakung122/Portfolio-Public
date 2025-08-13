@@ -1,0 +1,149 @@
+:root {
+    --bg: #15161A;
+    --size: 38vmax;
+    --blur: 100px;
+    --speed: 28s;
+    --radius: 8vmax;
+}
+
+.aurora-center {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    overflow: hidden;
+    z-index: -1;
+}
+
+.blob {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--size);
+    height: var(--size);
+    transform: translate(-50%, -50%);
+    filter: blur(var(--blur));
+    opacity: 0.6;
+    border-radius: 50%;
+    will-change: transform;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+/* 4 สีตัดกัน */
+.b1 {
+    background: radial-gradient(closest-side, #ff2bd1 0%, rgba(255, 43, 209, 0) 70%);
+    animation: orbit1 var(--speed) ease-in-out infinite;
+}
+
+.b2 {
+    background: radial-gradient(closest-side, #00e5ff 0%, rgba(0, 229, 255, 0) 70%);
+    animation: orbit2 var(--speed) ease-in-out infinite;
+    animation-delay: -25%;
+}
+
+.b3 {
+    background: radial-gradient(closest-side, #a3ff12 0%, rgba(163, 255, 18, 0) 70%);
+    animation: orbit3 var(--speed) ease-in-out infinite;
+    animation-delay: -50%;
+}
+
+.b4 {
+    background: radial-gradient(closest-side, #ff7b00 0%, rgba(255, 127, 0, 0) 70%);
+    animation: orbit4 var(--speed) ease-in-out infinite;
+    animation-delay: -75%;
+}
+
+/* Keyframes หมุนสลับทิศกัน */
+@keyframes orbit1 {
+    0% {
+        transform: translate(-50%, -50%) translateX(var(--radius)) translateY(0) scale(1.0);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) translateX(0) translateY(var(--radius)) scale(1.05);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateX(calc(var(--radius) * -1)) translateY(0) scale(1.0);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) translateX(0) translateY(calc(var(--radius) * -1)) scale(0.95);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateX(var(--radius)) translateY(0) scale(1.0);
+    }
+}
+
+@keyframes orbit2 {
+    0% {
+        transform: translate(-50%, -50%) translateX(calc(var(--radius) * -1)) translateY(0) scale(1.0);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) translateX(0) translateY(calc(var(--radius) * -1)) scale(0.95);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateX(var(--radius)) translateY(0) scale(1.0);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) translateX(0) translateY(var(--radius)) scale(1.05);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateX(calc(var(--radius) * -1)) translateY(0) scale(1.0);
+    }
+}
+
+@keyframes orbit3 {
+    0% {
+        transform: translate(-50%, -50%) translateX(0) translateY(var(--radius)) scale(1.05);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) translateX(calc(var(--radius) * -1)) translateY(0) scale(1.0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateX(0) translateY(calc(var(--radius) * -1)) scale(0.95);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) translateX(var(--radius)) translateY(0) scale(1.0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateX(0) translateY(var(--radius)) scale(1.05);
+    }
+}
+
+@keyframes orbit4 {
+    0% {
+        transform: translate(-50%, -50%) translateX(0) translateY(calc(var(--radius) * -1)) scale(0.95);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) translateX(var(--radius)) translateY(0) scale(1.0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateX(0) translateY(var(--radius)) scale(1.05);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) translateX(calc(var(--radius) * -1)) translateY(0) scale(1.0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateX(0) translateY(calc(var(--radius) * -1)) scale(0.95);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .blob {
+        animation: none !important;
+    }
+}

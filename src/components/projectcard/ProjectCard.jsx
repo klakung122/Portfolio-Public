@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { SiPolymerproject } from "react-icons/si";
 import './ProjectCard.css';
 
-function ProjectCard({ title, imgUrl }) {
+function ProjectCard({ title, imgUrl, path }) {
     const cardRef = useRef(null);
 
     const handleMouseMove = (e) => {
@@ -18,6 +18,7 @@ function ProjectCard({ title, imgUrl }) {
             className="project-card"
             ref={cardRef}
             onMouseMove={handleMouseMove}
+            data-path={path}
         >
             <div className="img" style={{ backgroundImage: `url(${imgUrl})` }} >
                 <span>{title}</span>

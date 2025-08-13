@@ -9,9 +9,6 @@
     display: flex;
     padding: 40px 64px;
     gap: 16px;
-    border-radius: 16px;
-    background: rgba(21, 22, 26, 0.60);
-    backdrop-filter: blur(12px);
     margin-left: -24px;
     margin-right: -24px;
 }
@@ -20,15 +17,16 @@
     display: flex;
     justify-content: center;
     padding: 15px;
-    border-radius: 100px;
+    border-radius: 80px;
     border: 1px solid rgba(124, 124, 124, 0.25);
     font-size: 22px;
     min-width: 235px;
     font-weight: 600;
     color: #FFF;
-    border-radius: 80px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%), rgba(0, 0, 0, 0.10);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.04), 0 2px 3px 0 rgba(0, 0, 0, 0.12), 0 6px 9px 0 rgba(0, 0, 0, 0.60);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(21, 22, 26, 0.65) 100%), rgba(0, 0, 0, 0.20);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.04),
+        0 2px 3px 0 rgba(0, 0, 0, 0.12),
+        0 6px 9px 0 rgba(0, 0, 0, 0.60);
     cursor: pointer;
     transition:
         background 220ms ease,
@@ -38,9 +36,9 @@
 }
 
 .controlbtn:hover {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%), rgba(255, 255, 255, 0.05);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(21, 22, 26, 0.65) 100%), rgba(255, 255, 255, 0.10);
 }
 
 .controlbtn.active {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%), rgba(255, 255, 255, 0.10);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(21, 22, 26, 0.65) 100%), rgba(255, 255, 255, 0.15);
 }

@@ -7,18 +7,24 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Projects2 from './pages/Projects2';
 import Projects3 from './pages/Projects3';
+import AuroraBackground from './components/background/AuroraBackground';
+import ScrollToTop from './ScrollToTop';
 
 function Shell() {
   return (
     <>
-      <Sidebar />
-      <Outlet />
+      <AuroraBackground />
+      <div>
+        <Sidebar />
+        <Outlet />
+      </div>
     </>);
 }
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Shell />}>
           <Route path="/" element={<Home />} />

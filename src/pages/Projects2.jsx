@@ -16,7 +16,7 @@ function Projects2() {
     return (
         <main className='container'>
             <div className="about">
-                <span>POS Project</span>
+                <span>BirthDay Project</span>
                 <div>
                     <span>This portfolio presents a curated collection of projects I have created and developed during 2024-2025. Each work embodies my identity, perspective, and creative process, showcasing a diverse range of projects crafted with dedication, attention to detail, and a passion for innovation.</span>
                 </div>
@@ -45,7 +45,10 @@ function Projects2() {
                         <span>Explain what your project is about: what kind of problem does it solve, who is the target group, and how does it provide a sufficient solution?</span>
                     </div>
 
-                    <button type="button" className='controlbtn visit'><span>Visit Once UI</span><FaLongArrowAltRight /></button>
+                    <button type="button" className='controlbtn visit' onClick={() => window.open("https://beanday-39888.web.app/", "_blank")}>
+                        <span>Visit This Project</span>
+                        <FaLongArrowAltRight />
+                    </button>
                 </div>
             </div>
 
