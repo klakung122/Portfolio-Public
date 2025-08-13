@@ -1,9 +1,10 @@
 import { useState, useLayoutEffect, useRef } from "react";
-import './Sidebar.css';
+import "./Sidebar.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { TiHome } from "react-icons/ti";
 import { SiPolymerproject } from "react-icons/si";
 import { AiOutlineGithub } from "react-icons/ai";
+import { useLangCtx } from "../../lang/LangContext";
 
 function Sidebar() {
     const [hoverIndex, setHoverIndex] = useState(null);
@@ -15,17 +16,21 @@ function Sidebar() {
     const location = useLocation();
     const navigate = useNavigate();
 
+    const { lang, setLang } = useLangCtx();
+
     const items = [
         { type: "icon", element: <TiHome className="icon" />, path: "/" },
         { type: "icon", element: <SiPolymerproject className="icon" />, path: "/projects" },
         { type: "divider" },
-        { type: "icon", element: <AiOutlineGithub className="icon" />, href: "https://github.com/klakung122?tab=repositories" },
+        // ปุ่มภาษา: โชว์ "ภาษาที่จะสลับไป"
+        { type: "lang", element: <span style={{ fontWeight: 700 }}>{lang === "en" ? "TH" : "EN"}</span> },
+        { type: "icon", element: <AiOutlineGithub className="icon" />, href: "https://github.com/klakung122?tab=repositories" }
     ];
 
     const handleEnter = (idx, e) => {
-        const iconHeight = e.currentTarget.offsetHeight; // 56px
-        const highlightHeight = 56; // ให้ขนาดเท่า icon
-        const offset = (iconHeight - highlightHeight) / 2; // ตรงกลางพอดี
+        const iconHeight = e.currentTarget.offsetHeight;
+        const highlightHeight = 56;
+        const offset = (iconHeight - highlightHeight) / 2;
         setHighlightTop(e.currentTarget.offsetTop + offset);
         setHoverIndex(idx);
         setShowHighlight(true);
@@ -37,8 +42,12 @@ function Sidebar() {
     };
 
     const handleClick = (item) => {
+        if (item.type === "lang") {
+            setLang(prev => (prev === "th" ? "en" : "th"));
+            return;
+        }
         if (item.href) {
-            window.open(item.href, "_blank", "noopener"); // เปิดลิงก์ใหม่
+            window.open(item.href, "_blank", "noopener");
         } else if (item.path && location.pathname !== item.path) {
             navigate(item.path);
         }
@@ -46,34 +55,31 @@ function Sidebar() {
 
     const isActive = (path) => {
         if (!path) return false;
-        // exact สำหรับ root
         if (path === "/") return location.pathname === "/";
-        // อื่น ๆ ให้เช็คขึ้นต้น แต่กันเคส "/" ด้วย
         return location.pathname.startsWith(path);
     };
 
     const updateActivePosition = () => {
         if (!containerRef.current) return;
-        const wrappers = containerRef.current.querySelectorAll(".icon-wrapper");
-        const iconItems = items.filter(i => i.type === "icon");
-        const activeIdx = iconItems.findIndex(it => isActive(it.path));
+        const wrappers = containerRef.current.querySelectorAll(".icon-wrapper[data-nav='true']");
+        const navItems = items.filter((i) => i.type === "icon" && i.path);
+        const activeIdx = navItems.findIndex((it) => isActive(it.path));
         if (activeIdx >= 0 && wrappers[activeIdx]) {
             const top = wrappers[activeIdx].offsetTop;
             setActiveTop(top);
             setShowActiveHighlight(true);
-            sessionStorage.setItem('sb_active_top', String(top)); // บันทึกไว้ใช้ตอน mount ใหม่
+            sessionStorage.setItem("sb_active_top", String(top));
         } else {
             setShowActiveHighlight(false);
         }
     };
 
     useLayoutEffect(() => {
-        const last = sessionStorage.getItem('sb_active_top');
+        const last = sessionStorage.getItem("sb_active_top");
         if (last) {
             setActiveTop(parseFloat(last));
             setShowActiveHighlight(true);
             requestAnimationFrame(() => {
-                // force reflow หน่อยกัน batch
                 containerRef.current && containerRef.current.offsetHeight;
                 requestAnimationFrame(() => updateActivePosition());
             });
@@ -87,39 +93,33 @@ function Sidebar() {
 
     return (
         <div className="sidebar" onMouseLeave={handleLeaveSidebar} ref={containerRef}>
-            <span
-                className={`active-highlight ${showActiveHighlight ? "visible" : ""}`}
-                style={{ top: activeTop }}
-                aria-hidden
-            />
-            <span
-                className={`hover-highlight ${showHighlight ? "visible" : ""}`}
-                style={{ top: highlightTop }}
-                aria-hidden
-            />
+            <span className={`active-highlight ${showActiveHighlight ? "visible" : ""}`} style={{ top: activeTop }} aria-hidden />
+            <span className={`hover-highlight ${showHighlight ? "visible" : ""}`} style={{ top: highlightTop }} aria-hidden />
             {items.map((item, idx) =>
                 item.type === "divider" ? (
-                    <div key={idx} className="divider-con">
-                        <div className="divider" />
-                    </div>
+                    <div key={idx} className="divider-con"><div className="divider" /></div>
                 ) : (
                     <div
                         key={idx}
                         role="button"
                         tabIndex={0}
-                        className={`icon-wrapper ${isActive(item.path) ? "active" : ""} ${hoverIndex === idx ? "highlight" : ""}`}
+                        data-nav={item.type === "icon" && !!item.path}
+                        className={`icon-wrapper ${item.type === "icon" && isActive(item.path) ? "active" : ""} ${hoverIndex === idx ? "highlight" : ""
+                            } ${item.type === "lang" ? "lang" : ""}`}
                         onMouseEnter={(e) => handleEnter(idx, e)}
                         onMouseLeave={() => setHoverIndex(null)}
                         onClick={() => handleClick(item)}
                         onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && handleClick(item)}
+                        aria-label={item.type === "lang" ? `toggle language (${lang.toUpperCase()})` : undefined}
+                        title={item.type === "lang" ? `Language: ${lang.toUpperCase()} (click to switch)` : undefined}
                     >
                         {item.element}
-                        <span className="dot" aria-hidden />
+                        {item.type === "icon" && <span className="dot" aria-hidden />}
                     </div>
                 )
             )}
         </div>
-    )
+    );
 }
 
-export default Sidebar
+export default Sidebar;

@@ -8,8 +8,11 @@ import { FaNode, FaHtml5, FaJsSquare } from "react-icons/fa";
 import { SiPhp, SiMysql, SiPolymerproject } from "react-icons/si";
 import { PiFigmaLogoFill } from "react-icons/pi";
 import ProjectCard from "../components/projectcard/Projectcard";
+import useTexts from "../lang/useTexts";
 
 function Home() {
+    const t = useTexts();
+
     const webdevskills = [
         { icon: <FaHtml5 className="skill-icon html" /> },
         { icon: <FaCss3Alt className="skill-icon css" /> },
@@ -116,7 +119,7 @@ function Home() {
     return (
         <main className='container'>
             <div className="about">
-                <span>Watcharakon Chaveewongprateep</span>
+                <span>{t("home.name")}</span>
                 <div>
                     <span className="first">Welcome to the portfolio of Watcharakorn Chaveewongprateep</span>
                     <span>This portfolio presents a curated collection of projects I have created and developed during 2024-2025. Each work embodies my identity, perspective, and creative process, showcasing a diverse range of projects crafted with dedication, attention to detail, and a passion for innovation.</span>

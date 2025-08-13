@@ -9,6 +9,7 @@ import Projects2 from './pages/Projects2';
 import Projects3 from './pages/Projects3';
 import AuroraBackground from './components/background/AuroraBackground';
 import ScrollToTop from './ScrollToTop';
+import { LangProvider } from "./lang/LangContext";
 
 function Shell() {
   return (
@@ -23,17 +24,19 @@ function Shell() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route element={<Shell />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects2" element={<Projects2 />} />
-          <Route path="/projects3" element={<Projects3 />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <LangProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route element={<Shell />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects2" element={<Projects2 />} />
+            <Route path="/projects3" element={<Projects3 />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </LangProvider>
   )
 }
 

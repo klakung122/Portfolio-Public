@@ -1,0 +1,12 @@
+{
+    "common": {
+        "language": "Language",
+        "switchTo": {
+            "en": "EN",
+            "th": "TH"
+        }
+    },
+    "home": {
+        "name": "Watcharakon Chaveewongprateep"
+    }
+}
