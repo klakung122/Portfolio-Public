@@ -2,14 +2,17 @@ import { useRef } from "react";
 import '../styles/Home.css';
 import Sidebar from '../components/sidebar/Sidebar';
 import Footer from '../components/footer/Footer';
-import { FaReact, FaDocker } from "react-icons/fa6";
-import { FaNode } from "react-icons/fa";
+import { FaReact, FaDocker, FaCss3Alt } from "react-icons/fa6";
+import { FaNode, FaHtml5, FaJsSquare } from "react-icons/fa";
 import { SiPhp, SiMysql, SiPolymerproject } from "react-icons/si";
 import { PiFigmaLogoFill } from "react-icons/pi";
 import ProjectCard from "../components/projectcard/Projectcard";
 
 function Home() {
     const webdevskills = [
+        { icon: <FaHtml5 className="skill-icon html" /> },
+        { icon: <FaCss3Alt className="skill-icon css" /> },
+        { icon: <FaJsSquare className="skill-icon js" /> },
         { icon: <FaReact className="skill-icon react" /> },
         { icon: <FaNode className="skill-icon node" /> },
         { icon: <FaDocker className="skill-icon docker" /> },
@@ -139,8 +142,8 @@ function Home() {
                         onPointerCancel={endDrag}
                     >
                         <div className="projects-track" ref={trackRef}>
-                            <ProjectCard title="POS Project" imgUrl="/ProjectFrame.png" />
-                            <ProjectCard title="BirthDay Project" imgUrl="/ProjectFrame1.png" />
+                            <ProjectCard title="POS Project" imgUrl="/ProjectFrame1.png" />
+                            <ProjectCard title="BirthDay Project" imgUrl="/ProjectFrame.png" />
                             <ProjectCard title="Rental Room Project" imgUrl="/ProjectFrame2.png" />
                         </div>
                     </div>

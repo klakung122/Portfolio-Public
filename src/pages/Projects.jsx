@@ -29,12 +29,18 @@ function Projects() {
             <Controls />
 
             <div className="card">
-                <div className="img" />
+                <div className="img" style={{ backgroundImage: 'url(/ProjectFrame1.png)' }} />
             </div>
 
             <div className="details">
                 <div className="mock-con">
-                    <div className="mock" />
+                    <div className="device device-iphone-14-pro">
+                        <div className="device-frame">
+                            <div className="device-screen">
+                                <iframe src="" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="dl-body">
                     <div>

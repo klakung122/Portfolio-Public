@@ -6,6 +6,7 @@ import Controls from '../components/controls/Controls';
 import ProjectCard from '../components/projectcard/Projectcard';
 import { FaReact } from "react-icons/fa6";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import 'devices.css/dist/devices.min.css';
 
 function Projects2() {
     const skills = [
@@ -23,17 +24,20 @@ function Projects2() {
 
             <Controls />
 
-            <div className="card">
-                <div className="img" />
+            <div className="mock-con">
+                <div className="device device-iphone-14-pro">
+                    <div className="device-frame">
+                        <div className="device-screen">
+                            <iframe src="https://beanday-39888.web.app/" />
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="details">
-                <div className="mock-con">
-                    <div className="mock" />
-                </div>
                 <div className="dl-body">
                     <div>
-                        <span>POS Project</span>
+                        <span>BirthDay Project</span>
                         <span> and some additional information</span>
                     </div>
 
