@@ -23,7 +23,7 @@ function Sidebar() {
         { type: "icon", element: <SiPolymerproject className="icon" />, path: "/projects" },
         { type: "divider" },
         // ปุ่มภาษา: โชว์ "ภาษาที่จะสลับไป"
-        { type: "lang", element: <span style={{ fontWeight: 700 }}>{lang === "en" ? "TH" : "EN"}</span> },
+        { type: "lang", element: <span className="lang no-select">{lang === "en" ? "TH" : "EN"}</span> },
         { type: "icon", element: <AiOutlineGithub className="icon" />, href: "https://github.com/klakung122?tab=repositories" }
     ];
 

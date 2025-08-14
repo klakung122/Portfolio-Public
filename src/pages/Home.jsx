@@ -121,9 +121,9 @@ function Home() {
             <div className="about">
                 <span>{t("home.name")}</span>
                 <div>
-                    <span className="first">Welcome to the portfolio of Watcharakorn Chaveewongprateep</span>
-                    <span>This portfolio presents a curated collection of projects I have created and developed during 2024-2025. Each work embodies my identity, perspective, and creative process, showcasing a diverse range of projects crafted with dedication, attention to detail, and a passion for innovation.</span>
-                    <span className="last">Thank you sincerely for taking the time to view my work.</span>
+                    <span className="first">{t("home.title")}</span>
+                    <span>{t("home.title2")}</span>
+                    <span className="last">{t("home.title3")}</span>
                 </div>
             </div>
             <div className="content">

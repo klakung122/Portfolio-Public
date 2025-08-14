@@ -140,3 +140,7 @@
     position: relative;
     z-index: 1;
 }
+
+.lang {
+    font-weight: 700;
+}
