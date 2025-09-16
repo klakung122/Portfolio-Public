@@ -3,52 +3,54 @@ import '../styles/Projects.css';
 import Footer from '../components/footer/Footer';
 import Controls from '../components/controls/Controls';
 import ProjectCard from '../components/projectcard/Projectcard';
-import { FaReact } from "react-icons/fa6";
+import { FaCss3Alt } from "react-icons/fa6";
+import { FaNode, FaHtml5, FaJsSquare } from "react-icons/fa";
+import { SiPhp, SiMysql } from "react-icons/si";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import 'devices.css/dist/devices.min.css';
 import { AiOutlineGithub } from "react-icons/ai";
 import useTexts from "../lang/useTexts";
 
-function Projects3() {
+function Projects4() {
     const t = useTexts();
 
     const skills = [
-        { icon: <FaReact className="skill-icon react" /> },
+        { icon: <FaHtml5 className="skill-icon html" /> },
+        { icon: <FaCss3Alt className="skill-icon css" /> },
+        { icon: <FaJsSquare className="skill-icon js" /> },
+        { icon: <SiPhp className="skill-icon php" /> },
+        { icon: <SiMysql className="skill-icon mysql" /> },
     ];
 
     return (
         <main className='container'>
             <div className="about">
-                <span>BirthDay Project</span>
+                <span>Room Rental Project</span>
                 <div>
-                    <span>{t("project3.des")}</span>
+                    <span>{t("project4.des")}</span>
                 </div>
             </div>
 
             <Controls />
 
-            <div className="details">
-                <div className="mock-con">
-                    <div className="device device-iphone-14-pro">
-                        <div className="device-frame">
-                            <div className="device-screen">
-                                <iframe src="" />
-                            </div>
-                        </div>
-                    </div>
+            <div className="card">
+                <div className="frame">
+                    <iframe src="https://rental.watcharakon.info/" />
                 </div>
+            </div>
+
+            <div className="details">
                 <div className="dl-body">
                     <div className='title-info'>
-                        <span>BirthDay Project</span>
+                        <span>Room Rental Project</span>
                         <span>{t("project.title-info")}</span>
                     </div>
 
                     <div className='info'>
-                        <span>{t("project3.info")}</span>
+                        <span>{t("project4.info")}</span>
                     </div>
 
                     <div className="btn-con">
-                        <button type="button" className='controlbtn visit' onClick={() => window.open("https://beanday-39888.web.app/", "_blank")}>
+                        <button type="button" className='controlbtn visit' onClick={() => window.open("https://rental.watcharakon.info/", "_blank")}>
                             <span>Visit This Project</span>
                             <FaLongArrowAltRight />
                         </button>
@@ -76,4 +78,4 @@ function Projects3() {
     )
 }
 
-export default Projects3
+export default Projects4

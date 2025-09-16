@@ -54,20 +54,34 @@
     flex-direction: column;
     gap: 40px;
     flex: 1;
+    height: fit-content;
 }
 
-.dl-body div:first-child {
+.dl-body .title-info {
     font-size: 48px;
     font-weight: 600;
 }
 
-.dl-body div span:last-child {
+.dl-body .title-info span:last-child {
     color: rgba(255, 255, 255, 0.60);
 }
 
-.dl-body div:nth-child(2) {
+.dl-body .info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     color: rgba(255, 255, 255, 0.80);
     font-size: 24px;
+}
+
+.dl-body .info span {
+    word-break: keep-all;
+    /* ไม่หั่นกลางคำไทย */
+    overflow-wrap: break-word;
+    /* ตัดเฉพาะตอนชนขอบจริง ๆ */
+    white-space: normal;
+    /* ให้ขึ้นบรรทัดได้ตามปกติ */
+    hyphens: manual;
 }
 
 .controlbtn.visit {
@@ -81,4 +95,15 @@
 
 .skill-con.tools .sub-title {
     text-align: center;
+}
+
+.controlbtn.github {
+    width: fit-content;
+    min-width: 0;
+    font-size: 34px;
+}
+
+.btn-con {
+    display: flex;
+    gap: 30px;
 }

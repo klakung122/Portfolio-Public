@@ -8,8 +8,9 @@ function Controls() {
 
     const buttons = [
         { label: 'POS Project', path: '/projects' },
-        { label: 'BirthDay Project', path: '/projects2' },
-        { label: 'Rental Room Project', path: '/projects3' }
+        { label: 'ZombieOutbreak Project', path: '/projects2' },
+        { label: 'BirthDay Project', path: '/projects3' },
+        { label: 'Room Rental Project', path: '/projects4' }
     ];
 
     return (

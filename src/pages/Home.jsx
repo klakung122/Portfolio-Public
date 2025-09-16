@@ -180,20 +180,24 @@ function Home() {
                                 path="/projects"
                             />
                             <ProjectCard
-                                title="BirthDay Project"
-                                imgUrl="/ProjectFrame.png"
+                                title="ZombieOutbreak Project"
+                                imgUrl="/ProjectFrame3.png"
                                 path="/projects2"
                             />
                             <ProjectCard
-                                title="Rental Room Project"
-                                imgUrl="/ProjectFrame2.png"
+                                title="BirthDay Project"
+                                imgUrl="/ProjectFrame.png"
                                 path="/projects3"
+                            />
+                            <ProjectCard
+                                title="Room Rental Project"
+                                imgUrl="/ProjectFrame2.png"
+                                path="/projects4"
                             />
                         </div>
                     </div>
                 </div>
             </div>
-            <Footer />
         </main>
     )
 }

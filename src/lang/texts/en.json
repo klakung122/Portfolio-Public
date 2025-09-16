@@ -4,5 +4,26 @@
         "title": "Welcome to the portfolio of Watcharakorn Chaveewongprateep",
         "title2": "This portfolio presents a curated collection of projects I have created and developed during 2024-2025. Each work embodies my identity, perspective, and creative process, showcasing a diverse range of projects crafted with dedication, attention to detail, and a passion for innovation.",
         "title3": "Thank you sincerely for taking the time to view my work."
+    },
+    "project": {
+        "title-info": " and some additional information"
+    },
+    "project1": {
+        "des": "This POS project was developed to improve the dining experience in restaurants by reducing unnecessary communication between customers and staff. Customers can place their orders directly through a QR code and a web application, while the restaurant can manage menus, orders, and billing in one integrated system. This approach saves time, minimizes errors, and enhances convenience for both sides.",
+        "info": "This system was developed to cover the essential functions required for restaurant operations, from the customer side to restaurant management. Customers can place orders directly through a QR code without relying on staff interaction. The platform also supports multiple languages to serve international customers and includes buffet-style service support for greater flexibility in real-world use. Once an order is placed, it is transmitted to the order management system in real time, reducing errors and improving service speed. On the restaurant side, staff can easily manage menus by adding or removing items, and the system provides VAT and service charge calculations to ensure accurate billing.",
+        "info2": "From a technical perspective, the project was developed using React for the frontend interface, Node.js/Express for the backend server, and MySQL for database management. The entire system is containerized with Docker, ensuring consistency across development and production environments while simplifying deployment."
+    },
+    "project2": {
+        "des": "The Zombie Outbreak project was created from personal interest in designing a board game to play with friends. It was inspired by Werewolf but redesigned with unique roles and custom gameplay mechanics. Traditionally, this type of game requires a dedicated Director to manage the flow, but this project eliminates that need by making the system itself act as the Director, ensuring a smoother game experience.",
+        "info": "The system was designed to automatically handle game phases (day/night), countdown timers, and role interactions such as Police, Doctor, Hunter, Inspector, and Alpha Zombie. This eliminates the need for a dedicated Director, as commonly required in physical board games. Gameplay data and results are synchronized within the system to ensure smooth operation and reduce the chance of errors during play.",
+        "info2": "Technically, the project was built using React for the frontend, Node.js/Express for the backend, MySQL for database management, and Docker to maintain consistency and stability in real-world deployment."
+    },
+    "project3": {
+        "des": "The Birthday Project was developed as a creative way to design a small website that could be gifted to friends or loved ones on their birthdays. The site was designed to display heartfelt birthday wishes with a bright and cheerful theme, aiming to create a memorable and enjoyable experience.",
+        "info": "The project was first designed in Figma before being developed with React to create a modern and responsive user interface. It was then deployed via Firebase Hosting for easy accessibility. The website is fully responsive on both desktop and mobile devices, featuring UI elements such as greeting messages and small animations to enhance the sense of surprise."
+    },
+    "project4": {
+        "des": "The Room Rental Project was developed to address the challenge of finding rental rooms, which often requires time-consuming in-person visits. This project was designed to make it easier for tenants to search for rooms that meet their preferences while also enabling property owners to present information more clearly. The project was also submitted as my Graduation Project.",
+        "info": "The system provides rental details such as price, location, and contact information, with a search function that helps users filter results based on their preferences. It was developed using HTML, CSS, JavaScript, PHP, and MySQL for database management. Although it was an early-stage project, it served as a fundamental learning experience and laid the groundwork for developing more complex systems later on."
     }
 }
