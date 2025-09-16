@@ -34,7 +34,14 @@ function Projects() {
             <Controls />
 
             <div className="card">
-                <div className="img" style={{ backgroundImage: 'url(/ProjectFrame1.png)' }} />
+                <video
+                    src="/project1.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="video-bg"
+                />
             </div>
 
             <div className="details">
