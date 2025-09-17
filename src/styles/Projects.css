@@ -101,3 +101,36 @@
     display: flex;
     gap: 30px;
 }
+
+@media (max-width: 1624px) {
+    .card {
+        height: fit-content;
+    }
+
+    .card video {
+        width: 970px;
+    }
+
+    .device-iphone-14-pro.mock {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .device-iphone-14-pro .device-frame.mock {
+        width: fit-content;
+    }
+
+    .device-frame video {
+        width: 328px;
+    }
+
+    .details {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .dl-body .title-info {
+        display: flex;
+        flex-direction: column;
+    }
+}

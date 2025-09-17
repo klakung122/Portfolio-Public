@@ -46,7 +46,7 @@ function Projects() {
 
             <div className="details">
                 <div className="mock-con">
-                    <div className="device device-iphone-14-pro">
+                    <div className="device device-iphone-14-pro mock">
                         <div className="device-frame mock">
                             <video
                                 src="/project1-mobile.MP4"

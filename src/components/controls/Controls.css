@@ -43,3 +43,14 @@
 .controlbtn.active {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(21, 22, 26, 0.65) 100%), rgba(255, 255, 255, 0.15);
 }
+
+@media (max-width: 1624px) {
+    .controls {
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .controlbtn {
+        font-size: 16px;
+    }
+}

@@ -17,11 +17,11 @@ function Shell() {
   return (
     <>
       <AuroraBackground />
-      <div>
+      <>
         <Sidebar />
         <Outlet />
         <Footer />
-      </div>
+      </>
     </>);
 }
 

@@ -144,3 +144,13 @@
 .lang {
     font-weight: 700;
 }
+
+@media (max-width: 1624px) {
+    .sidebar {
+        left: 10px;
+    }
+
+    .container {
+        padding: 20px 90px;
+    }
+}
