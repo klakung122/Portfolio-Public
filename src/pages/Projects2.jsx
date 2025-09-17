@@ -36,10 +36,15 @@ function Projects2() {
             <div className="details">
                 <div className="mock-con">
                     <div className="device device-iphone-14-pro">
-                        <div className="device-frame">
-                            <div className="device-screen">
-                                <iframe src="" />
-                            </div>
+                        <div className="device-frame mock">
+                            <video
+                                src="/project2-mobile.MP4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="video-bg"
+                            />
                         </div>
                     </div>
                 </div>

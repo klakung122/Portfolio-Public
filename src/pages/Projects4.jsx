@@ -33,9 +33,14 @@ function Projects4() {
             <Controls />
 
             <div className="card">
-                <div className="frame">
-                    <iframe src="https://rental.watcharakon.info/" />
-                </div>
+                <video
+                    src="/project4.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="video-bg"
+                />
             </div>
 
             <div className="details">
