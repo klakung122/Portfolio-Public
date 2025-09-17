@@ -65,7 +65,7 @@ function Projects2() {
                             <FaLongArrowAltRight />
                         </button>
 
-                        <button type="button" className='controlbtn github' onClick={() => window.open("https://zombie.watcharakon.info/", "_blank")}>
+                        <button type="button" className='controlbtn github' onClick={() => window.open("https://github.com/klakung122/ZombieOutbreak-Public", "_blank")}>
                             <AiOutlineGithub />
                         </button>
                     </div>

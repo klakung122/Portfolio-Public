@@ -52,6 +52,7 @@ function Projects4() {
 
                     <div className='info'>
                         <span>{t("project4.info")}</span>
+                        <span className='pass'>{t("project.pass")}</span>
                     </div>
 
                     <div className="btn-con">
@@ -60,7 +61,7 @@ function Projects4() {
                             <FaLongArrowAltRight />
                         </button>
 
-                        <button type="button" className='controlbtn github' onClick={() => window.open("https://zombie.watcharakon.info/", "_blank")}>
+                        <button type="button" className='controlbtn github' onClick={() => window.open("https://github.com/klakung122/Projectfinal-Public", "_blank")}>
                             <AiOutlineGithub />
                         </button>
                     </div>

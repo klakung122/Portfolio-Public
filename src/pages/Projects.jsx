@@ -68,6 +68,7 @@ function Projects() {
                     <div className='info'>
                         <span>{t("project1.info")}</span>
                         <span>{t("project1.info2")}</span>
+                        <span className='pass'>{t("project.pass")}</span>
                     </div>
 
                     <div className="btn-con">
@@ -76,7 +77,7 @@ function Projects() {
                             <FaLongArrowAltRight />
                         </button>
 
-                        <button type="button" className='controlbtn github' onClick={() => window.open("https://pos.watcharakon.info/", "_blank")}>
+                        <button type="button" className='controlbtn github' onClick={() => window.open("https://github.com/klakung122/POS-Public", "_blank")}>
                             <AiOutlineGithub />
                         </button>
                     </div>

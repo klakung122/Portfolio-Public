@@ -73,6 +73,11 @@
     hyphens: manual;
 }
 
+.pass {
+    font-weight: 700;
+    color: #fff;
+}
+
 .controlbtn.visit {
     width: fit-content;
     gap: 20px;

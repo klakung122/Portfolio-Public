@@ -6,7 +6,8 @@
         "title3": "Thank you sincerely for taking the time to view my work."
     },
     "project": {
-        "title-info": " and some additional information"
+        "title-info": " and some additional information",
+        "pass": "Access code for viewing the work Username : admin Password : admin"
     },
     "project1": {
         "des": "The POS project was developed to improve the dining experience in restaurants by reducing unnecessary communication between customers and staff. Customers can place their orders directly through a QR code and a web application, while the restaurant can manage menus, orders, and billing in one integrated system. This approach saves time, minimizes errors, and enhances convenience for both sides.",
