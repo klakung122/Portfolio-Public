@@ -185,14 +185,19 @@ function Home() {
                                 path="/projects2"
                             />
                             <ProjectCard
+                                title="Bucketlist Project"
+                                imgUrl="/ProjectFrame4.png"
+                                path="/projects3"
+                            />
+                            <ProjectCard
                                 title="BirthDay Project"
                                 imgUrl="/ProjectFrame.png"
-                                path="/projects3"
+                                path="/projects4"
                             />
                             <ProjectCard
                                 title="Room Rental Project"
                                 imgUrl="/ProjectFrame2.png"
-                                path="/projects4"
+                                path="/projects5"
                             />
                         </div>
                     </div>

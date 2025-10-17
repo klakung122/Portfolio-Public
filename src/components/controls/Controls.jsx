@@ -9,8 +9,9 @@ function Controls() {
     const buttons = [
         { label: 'POS Project', path: '/projects' },
         { label: 'ZombieOutbreak Project', path: '/projects2' },
-        { label: 'BirthDay Project', path: '/projects3' },
-        { label: 'Room Rental Project', path: '/projects4' }
+        { label: 'Bucketlist Project', path: '/projects3' },
+        { label: 'BirthDay Project', path: '/projects4' },
+        { label: 'Room Rental Project', path: '/projects5' }
     ];
 
     return (

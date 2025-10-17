@@ -9,6 +9,7 @@ import Projects from './pages/Projects';
 import Projects2 from './pages/Projects2';
 import Projects3 from './pages/Projects3';
 import Projects4 from './pages/Projects4';
+import Projects5 from './pages/Projects5';
 import AuroraBackground from './components/background/AuroraBackground';
 import ScrollToTop from './ScrollToTop';
 import { LangProvider } from "./lang/LangContext";
@@ -35,8 +36,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects2" element={<Projects2 />} />
-            <Route path="/projects3" element={<Projects3 />} />
-            <Route path="/projects4" element={<Projects4 />} />
+            <Route path="/projects3" element={<Projects5 />} />
+            <Route path="/projects4" element={<Projects3 />} />
+            <Route path="/projects5" element={<Projects4 />} />
           </Route>
         </Routes>
       </BrowserRouter>
