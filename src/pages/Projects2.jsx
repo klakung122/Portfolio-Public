@@ -38,7 +38,7 @@ function Projects2() {
                     <div className="device device-iphone-14-pro">
                         <div className="device-frame mock">
                             <video
-                                src="/project2-mobile.MP4"
+                                src="/project2-mobile.mp4"
                                 autoPlay
                                 loop
                                 muted

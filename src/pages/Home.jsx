@@ -9,6 +9,7 @@ import { SiPhp, SiMysql, SiPolymerproject } from "react-icons/si";
 import { PiFigmaLogoFill } from "react-icons/pi";
 import ProjectCard from "../components/projectcard/Projectcard";
 import useTexts from "../lang/useTexts";
+import { RiNextjsFill } from "react-icons/ri";
 
 function Home() {
     const t = useTexts();
@@ -17,6 +18,7 @@ function Home() {
         { icon: <FaHtml5 className="skill-icon html" /> },
         { icon: <FaCss3Alt className="skill-icon css" /> },
         { icon: <FaJsSquare className="skill-icon js" /> },
+        { icon: <RiNextjsFill className="skill-icon" /> },
         { icon: <FaReact className="skill-icon react" /> },
         { icon: <FaNode className="skill-icon node" /> },
         { icon: <FaDocker className="skill-icon docker" /> },

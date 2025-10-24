@@ -9,11 +9,13 @@ import { SiMysql } from "react-icons/si";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { AiOutlineGithub } from "react-icons/ai";
 import useTexts from "../lang/useTexts";
+import { RiNextjsFill } from "react-icons/ri";
 
 function Projects5() {
     const t = useTexts();
 
     const skills = [
+        { icon: <RiNextjsFill className="skill-icon" /> },
         { icon: <FaReact className="skill-icon react" /> },
         { icon: <FaNode className="skill-icon node" /> },
         { icon: <FaDocker className="skill-icon docker" /> },
@@ -26,7 +28,7 @@ function Projects5() {
                 <span>Bucketlist Project</span>
                 <div>
                     <span>
-                        {t("project2.des")}
+                        {t("project5.des")}
                     </span>
                 </div>
             </div>
@@ -38,7 +40,7 @@ function Projects5() {
                     <div className="device device-iphone-14-pro">
                         <div className="device-frame mock">
                             <video
-                                src="/project2-mobile.MP4"
+                                src="/project5-mobile.mp4"
                                 autoPlay
                                 loop
                                 muted
@@ -55,8 +57,8 @@ function Projects5() {
                     </div>
 
                     <div className='info'>
-                        <span>{t("project2.info")}</span>
-                        <span>{t("project2.info2")}</span>
+                        <span>{t("project5.info")}</span>
+                        <span>{t("project5.info2")}</span>
                         <span className='pass'>{t("project.pass2")}</span>
                     </div>
 
