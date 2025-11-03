@@ -55,8 +55,20 @@ function Projects2() {
                     </div>
 
                     <div className='info'>
-                        <span>{t("project2.info")}</span>
-                        <span>{t("project2.info2")}</span>
+                        <span>{t("project.info")}</span>
+                        <ul>
+                            <li>{t("project2.infolist1")}</li>
+                            <li>{t("project2.infolist2")}</li>
+                            <li>{t("project2.infolist3")}</li>
+                            <li>{t("project2.infolist4")}</li>
+                        </ul>
+                        <span>{t("project.info2")}</span>
+                        <ul>
+                            <li><span>Frontend:</span> React</li>
+                            <li><span>Backend:</span> Node.js , Express</li>
+                            <li><span>Database:</span> MySQL</li>
+                            <li><span>Containerization / Deployment:</span> Docker</li>
+                        </ul>
                     </div>
 
                     <div className="btn-con">

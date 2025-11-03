@@ -7,30 +7,51 @@
     },
     "project": {
         "title-info": " and some additional information",
-        "pass": "Access code for viewing the work Username : admin Password : admin",
-        "pass2": "Access code for viewing the work Username : admin Password : adminadmin"
+        "info": "System / Features",
+        "info2": "Technology / Tools",
+        "pass": "Access code for viewing the work"
     },
     "project1": {
         "des": "The POS project was developed to improve the dining experience in restaurants by reducing unnecessary communication between customers and staff. Customers can place their orders directly through a QR code and a web application, while the restaurant can manage menus, orders, and billing in one integrated system. This approach saves time, minimizes errors, and enhances convenience for both sides.",
-        "info": "The system was developed to cover the essential functions required for restaurant operations, from the customer side to restaurant management. Customers can place orders directly through a QR code without relying on staff interaction. The platform also supports multiple languages to serve international customers and includes buffet-style service support for greater flexibility in real-world use. Once an order is placed, it is transmitted to the order management system in real time, reducing errors and improving service speed. On the restaurant side, staff can easily manage menus by adding or removing items, and the system provides VAT and service charge calculations to ensure accurate billing.",
-        "info2": "From a technical perspective, the project was developed using React for the frontend interface, Node.js/Express for the backend server, and MySQL for database management. The entire system is containerized with Docker, ensuring consistency across development and production environments while simplifying deployment."
+        "infolist1": "Covers essential functions for restaurant operations, from customers to staff",
+        "infolist2": "Allows customers to order directly via QR Code without relying on staff",
+        "infolist3": "Supports multi-language menus, catering to international customers",
+        "infolist4": "Accommodates buffet-style service for flexible usage",
+        "infolist5": "Real-time order management reduces errors and speeds up service",
+        "infolist6": "Restaurant staff can manage the menu, adding or removing items independently",
+        "infolist7": "Automatically calculates VAT and service charges for accurate billing"
     },
     "project2": {
         "des": "The Zombie Outbreak project was created from personal interest in designing a board game to play with friends. It was inspired by Werewolf but redesigned with unique roles and custom gameplay mechanics. Traditionally, this type of game requires a dedicated Director to manage the flow, but this project eliminates that need by making the system itself act as the Director, ensuring a smoother game experience.",
-        "info": "The system was designed to automatically handle game phases (day/night), countdown timers, and role interactions such as Police, Doctor, Hunter, Inspector, and Alpha Zombie. This eliminates the need for a dedicated Director, as commonly required in physical board games. Gameplay data and results are synchronized within the system to ensure smooth operation and reduce the chance of errors during play.",
+        "info": "",
+        "infolist1": "Automatically manages game phases (day/night)",
+        "infolist2": "Handles countdowns and role actions, including Police, Doctor, Hunter, Inspector, and Alpha Zombie",
+        "infolist3": "Eliminates the need for a game director, unlike traditional board games",
+        "infolist4": "Synchronizes gameplay data and results to reduce errors and provide a smooth gaming experience",
         "info2": "Technically, the project was built using React for the frontend, Node.js/Express for the backend, MySQL for database management, and Docker to maintain consistency and stability in real-world deployment."
     },
     "project3": {
         "des": "The Birthday Project was developed as a creative way to design a small website that could be gifted to friends or loved ones on their birthdays. The site was designed to display heartfelt birthday wishes with a bright and cheerful theme, aiming to create a memorable and enjoyable experience.",
-        "info": "The project was first designed in Figma before being developed with React to create a modern and responsive user interface. It was then deployed via Firebase Hosting for easy accessibility. The website is fully responsive on both desktop and mobile devices, featuring UI elements such as greeting messages and small animations to enhance the sense of surprise."
+        "infolist1": "UI/UX designed with Figma",
+        "infolist2": "Developed with React for a modern and responsive user interface",
+        "infolist3": "Deployed via Firebase Hosting for easy access",
+        "infolist4": "Only mobile display is supported",
+        "infolist5": "Includes interactive UI elements, such as greetings and small animations, to enhance user engagement"
     },
     "project4": {
-        "des": "The Room Rental Project was developed to address the challenge of finding rental rooms, which often requires time-consuming in-person visits. This project was designed to make it easier for tenants to search for rooms that meet their preferences while also enabling property owners to present information more clearly. The project was also submitted as my Graduation Project.",
-        "info": "The system provides rental details such as price, location, and contact information, with a search function that helps users filter results based on their preferences. It was developed using HTML, CSS, JavaScript, PHP, and MySQL for database management. Although it was an early-stage project, it served as a fundamental learning experience and laid the groundwork for developing more complex systems later on."
+        "des": "The Room Rental project was developed to address the common problem that searching for rental rooms is often time-consuming and inconvenient, as tenants usually need to visit the rooms in person. This can be inconvenient and waste time. The system was therefore designed to help tenants find rooms that match their requirements more easily, while also allowing property owners to present information more clearly. Currently, the system supports listings only in Phuket province. This project was completed as part of a Vocational Certificate graduation requirement.",
+        "infolist1": "Displays rental room details, including price, location, and contact information",
+        "infolist2": "Includes a search function to allow users to filter listings quickly based on their preferences",
+        "infolist3": "Includes a ‘like’ feature to save for later viewing"
     },
     "project5": {
         "des": "The Bucketlist project was created from my personal interest in wanting to make a bucket list to use and share with my partner. I developed the Bucketlist web application to allow couples or friends to create lists of things they want to do together and invite others to join in, making it a fun and engaging experience.",
-        "info": "Bucketlist is a web application I developed with the intention of creating a dedicated space to build bucket lists with a partner and invite friends to join the fun in one place. The goal of the project is to provide a platform that helps users plan the things they want to do in life, share their dreams with loved ones, and conveniently and enjoyably track their progress. The application comes with key features such as Google login for convenience and security, displaying the progress percentage of each item, inviting friends to participate and create bucket lists together, managing lists with the ability to add, delete, and edit items freely, tracking statuses like In Progress and Completed, and sharing private invitation links to easily join a bucket list.",
+        "infolist1": "Google login for convenience and security",
+        "infolist2": "Displays progress percentage for each bucket list item",
+        "infolist3": "Invite friends to collaborate on bucket lists",
+        "infolist4": "Full item management: add, delete, and edit freely",
+        "infolist5": "Track item status, e.g., In Progress and Completed",
+        "infolist6": "Share private invitation links for easy access to bucket lists",
         "info2": "In terms of technology, this system is developed using Next.js for the frontend, Node.js/Express for the backend, and MySQL for database management. The entire setup is managed through Docker to ensure consistency in development and production, making deployment and usage straightforward and efficient."
     }
 }

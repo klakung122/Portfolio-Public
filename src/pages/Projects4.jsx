@@ -3,7 +3,7 @@ import '../styles/Projects.css';
 import Footer from '../components/footer/Footer';
 import Controls from '../components/controls/Controls';
 import ProjectCard from '../components/projectcard/Projectcard';
-import { FaCss3Alt } from "react-icons/fa6";
+import { FaCss3Alt, FaDocker } from "react-icons/fa6";
 import { FaNode, FaHtml5, FaJsSquare } from "react-icons/fa";
 import { SiPhp, SiMysql } from "react-icons/si";
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -18,6 +18,7 @@ function Projects4() {
         { icon: <FaCss3Alt className="skill-icon css" /> },
         { icon: <FaJsSquare className="skill-icon js" /> },
         { icon: <SiPhp className="skill-icon php" /> },
+        { icon: <FaDocker className="skill-icon docker" /> },
         { icon: <SiMysql className="skill-icon mysql" /> },
     ];
 
@@ -51,8 +52,24 @@ function Projects4() {
                     </div>
 
                     <div className='info'>
-                        <span>{t("project4.info")}</span>
+                        <span>{t("project.info")}</span>
+                        <ul>
+                            <li>{t("project4.infolist1")}</li>
+                            <li>{t("project4.infolist2")}</li>
+                            <li>{t("project4.infolist3")}</li>
+                        </ul>
+                        <span>{t("project.info2")}</span>
+                        <ul>
+                            <li><span>Frontend:</span> HTML, CSS, JavaScript</li>
+                            <li><span>Backend:</span> PHP</li>
+                            <li><span>Database:</span> MySQL</li>
+                            <li><span>Containerization / Deployment:</span> Docker</li>
+                        </ul>
                         <span className='pass'>{t("project.pass")}</span>
+                        <ul>
+                            <li><span>Username: admin</span></li>
+                            <li><span>Password: admin</span></li>
+                        </ul>
                     </div>
 
                     <div className="btn-con">

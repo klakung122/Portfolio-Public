@@ -4,6 +4,7 @@ import Footer from '../components/footer/Footer';
 import Controls from '../components/controls/Controls';
 import ProjectCard from '../components/projectcard/Projectcard';
 import { FaReact } from "react-icons/fa6";
+import { PiFigmaLogoFill } from "react-icons/pi";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import 'devices.css/dist/devices.min.css';
 import { AiOutlineGithub } from "react-icons/ai";
@@ -13,6 +14,7 @@ function Projects3() {
     const t = useTexts();
 
     const skills = [
+        { icon: <PiFigmaLogoFill className="skill-icon figma" /> },
         { icon: <FaReact className="skill-icon react" /> },
     ];
 
@@ -49,7 +51,14 @@ function Projects3() {
                     </div>
 
                     <div className='info'>
-                        <span>{t("project3.info")}</span>
+                        <span>{t("project.info2")}</span>
+                        <ul>
+                            <li>{t("project3.infolist1")}</li>
+                            <li>{t("project3.infolist2")}</li>
+                            <li>{t("project3.infolist3")}</li>
+                            <li>{t("project3.infolist4")}</li>
+                            <li>{t("project3.infolist5")}</li>
+                        </ul>
                     </div>
 
                     <div className="btn-con">

@@ -64,13 +64,24 @@
 }
 
 .dl-body .info span {
+    font-weight: 700;
+    font-size: 24px;
     word-break: keep-all;
-    /* ไม่หั่นกลางคำไทย */
     overflow-wrap: break-word;
-    /* ตัดเฉพาะตอนชนขอบจริง ๆ */
     white-space: normal;
-    /* ให้ขึ้นบรรทัดได้ตามปกติ */
     hyphens: manual;
+}
+
+.dl-body .info ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: disc;
+    padding: 0 0 0 40px;
+}
+
+.dl-body .info ul span {
+    font-weight: 700;
 }
 
 .pass {
