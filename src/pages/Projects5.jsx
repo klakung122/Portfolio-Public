@@ -81,12 +81,12 @@ function Projects5() {
                     </div>
 
                     <div className="btn-con">
-                        <button type="button" className='controlbtn visit' onClick={() => window.open("https://zombie.watcharakon.info/", "_blank")}>
+                        <button type="button" className='controlbtn visit' onClick={() => window.open("https://bucketlist.watcharakon.info/", "_blank")}>
                             <span>Visit This Project</span>
                             <FaLongArrowAltRight />
                         </button>
 
-                        <button type="button" className='controlbtn github' onClick={() => window.open("https://github.com/klakung122/ZombieOutbreak-Public", "_blank")}>
+                        <button type="button" className='controlbtn github' onClick={() => window.open("https://github.com/klakung122/bucketlist-Public", "_blank")}>
                             <AiOutlineGithub />
                         </button>
                     </div>
